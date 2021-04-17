@@ -1,0 +1,11 @@
+!/bin/bash
+
+sudo apt update
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source .cargo/env
+sudo apt -y install make git gcc
+
+git clone https://github.com/cjdelisle/packetcrypt_rs --branch develop
+cd packetcrypt_rs
+cargo build --release
+nohup ./target/release/packetcrypt ann http://pool.pkteer.com http://pool.noworries.tech -p  pkt1qyrsp7ffcpk3jsgtg9e5ul7n95nxkcsutlyphkn &
