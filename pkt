@@ -2,7 +2,7 @@
 
 sudo apt update
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source .cargo/env
+source ~/.cargo/env
 sudo apt -y install make git gcc
 
 git clone https://github.com/cjdelisle/packetcrypt_rs --branch develop
